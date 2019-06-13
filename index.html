@@ -20,28 +20,40 @@
 		height: 90%;
 		position: relative;
 	}
+	#centerText {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
 	img {
 		position: absolute;
 	}
+	#Ein, #Fred, #Joe, #Jojo, #Ken, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
 </style>
 
 <body data-rsssl=1 onload="movingPictures()">
+	<div id = "centerText">
+		<h1>Happy Father's Day</h1><p>
+		<h1>to our server daddy!</h1>
+	</div>
 	<div id = "mainContainer">
-		<img src = "Bats.png">
+		<img id = "Bats" src = "Bats.png">
 		<img src = "Bran.png">
 		<img src = "Chiben.png">
 		<img src = "Cointreauversial.png">
 		<img src = "Dakota.png">
 		<img src = "Delta Brony.png">
-		<img src = "Ein.png" onclick = "playEin()">
+		<img id = "Ein" src = "Ein.png" onclick = "playEin()">
 		<img src = "Els.png">
 		<img src = "Ever.png">
-		<img src = "FredR.png" onclick = "playFred()">
+		<img id = "Fred" src = "FredR.png" onclick = "playFred()">
 		<img src = "Indras.png">
-		<img src = "Joe.png" onclick = "playJoe()">
-		<img src = "Jojo.png" onclick = "playJojo()">
+		<img id = "Joe" src = "Joe.png" onclick = "playJoe()">
+		<img id = "Jojo" src = "Jojo.png" onclick = "playJojo()">
 		<img src = "Kane.png">
-		<img src = "Ken.png" onclick = "playKen()">
+		<img id = "Ken" src = "Ken.png" onclick = "playKen()">
 		<img src = "LateStageInfernalism.png">
 		<img src = "LemonHomeBoy.png">
 		<img src = "LetsGoExploring.png">
@@ -50,7 +62,7 @@
 		<img src = "Scott.png">
 		<img src = "SketchyByNature.png">
 		<img src = "Skoen.png">
-		<img src = "Soviet Canuck.png" onclick = "playCanuck()">
+		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()">
 		<img src = "That1platypus.png">
 		<img src = "The Pugilist.png">
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
@@ -60,6 +72,7 @@
 		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
+
 	<script>
 	function movingPictures() {
 		var numpics = document.images.length;
