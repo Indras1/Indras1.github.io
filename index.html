@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>It's Father's Day, Nightfawn!</title>
+</head>
+
+<style type="text/css">
+	html,body {
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background: #202225;
+	}
+	#mainContainer {
+		width: 90%;
+		height: 90%;
+		position: relative;
+	}
+	img {
+		position: absolute;
+	}
+</style>
+
+<body data-rsssl=1 onload="movingPictures()">
+	<div id = "mainContainer">
+		<img src = "Bats.png">
+		<img src = "Bran.png">
+		<img src = "Chiben.png">
+		<img src = "Cointreauversial.png">
+		<img src = "Dakota.png">
+		<img src = "Delta Brony.png">
+		<img src = "Ein.png">
+		<img src = "Els.png">
+		<img src = "Ever.png">
+		<img src = "FredR.png">
+		<img src = "Indras.png">
+		<img src = "Joe.png">
+		<img src = "Jojo.png">
+		<img src = "Kane.png">
+		<img src = "Ken.png">
+		<img src = "LateStageInfernalism.png">
+		<img src = "LemonHomeBoy.png">
+		<img src = "LetsGoExploring.png">
+		<img src = "Liquid_Wolf.png">
+		<img src = "PhantomOrgan.png">
+		<img src = "Scott.png">
+		<img src = "SketchyByNature.png">
+		<img src = "Skoen.png">
+		<img src = "Soviet Canuck.png">
+		<img src = "That1platypus.png">
+		<img src = "The Pugilist.png">
+	</div>
+	<script>
+	function movingPictures() {
+		var numpics = document.images.length;
+		var pics = document.getElementsByTagName('img');
+		var pos = 0;
+		var posinterval = 0;
+		var id = setInterval(frame, 5);
+
+		function frame() {
+			if (pos >= 2 * Math.PI) {
+				pos = 0;
+			} else {
+				pos+=(Math.PI / 2000);
+				posinterval = (2 * Math.PI) / numpics
+				for(i=0; i < numpics; i++){
+					pics[i].style.top = ((Math.sin(pos + (posinterval * i)) * 0.9 + 0.9) * 50) + '%';
+					pics[i].style.left = ((Math.cos(pos + (posinterval * i)) + 1) * 50) + '%';
+				}
+			}
+		}
+	}
+
+	</script>
+
+</body>
+</html>
