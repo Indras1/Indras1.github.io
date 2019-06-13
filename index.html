@@ -50,7 +50,7 @@
 		<img src = "Scott.png">
 		<img src = "SketchyByNature.png">
 		<img src = "Skoen.png">
-		<img src = "Soviet Canuck.png">
+		<img src = "Soviet Canuck.png" onclick = "playCanuck()">
 		<img src = "That1platypus.png">
 		<img src = "The Pugilist.png">
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
@@ -58,6 +58,7 @@
 		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
 		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
 		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
+		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
 	<script>
 	function movingPictures() {
@@ -98,6 +99,10 @@
 	}
 	function playKen(){
 		var audio = document.getElementById("audioKen");
+		audio.play();
+	}
+	function playCanuck(){
+		var audio = document.getElementById("audioCanuck");
 		audio.play();
 	}
 
