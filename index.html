@@ -33,15 +33,15 @@
 		<img src = "Cointreauversial.png">
 		<img src = "Dakota.png">
 		<img src = "Delta Brony.png">
-		<img src = "Ein.png">
+		<img src = "Ein.png" onclick = "playEin()">
 		<img src = "Els.png">
 		<img src = "Ever.png">
-		<img src = "FredR.png">
+		<img src = "FredR.png" onclick = "playFred()">
 		<img src = "Indras.png">
-		<img src = "Joe.png">
-		<img src = "Jojo.png">
+		<img src = "Joe.png" onclick = "playJoe()">
+		<img src = "Jojo.png" onclick = "playJojo()">
 		<img src = "Kane.png">
-		<img src = "Ken.png">
+		<img src = "Ken.png" onclick = "playKen()">
 		<img src = "LateStageInfernalism.png">
 		<img src = "LemonHomeBoy.png">
 		<img src = "LetsGoExploring.png">
@@ -53,6 +53,11 @@
 		<img src = "Soviet Canuck.png">
 		<img src = "That1platypus.png">
 		<img src = "The Pugilist.png">
+		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
+		<audio id = "audioFred" src = "Happy_Fathers_Day_FredR.mp3"></audio>
+		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
+		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
+		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
 	</div>
 	<script>
 	function movingPictures() {
@@ -74,6 +79,26 @@
 				}
 			}
 		}
+	}
+	function playEin(){
+		var audio = document.getElementById("audioEin");
+		audio.play();
+	}
+	function playFred(){
+		var audio = document.getElementById("audioFred");
+		audio.play();
+	}
+	function playJoe(){
+		var audio = document.getElementById("audioJoe");
+		audio.play();
+	}
+	function playJojo(){
+		var audio = document.getElementById("audioJojo");
+		audio.play();
+	}
+	function playKen(){
+		var audio = document.getElementById("audioKen");
+		audio.play();
 	}
 
 	</script>
