@@ -63,7 +63,7 @@
 		<img src = "Kane.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Ken" src = "Ken.png" onclick = "playKen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "LSI" src = "LateStageInfernalism.png" onclick = "playLSI()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "LemonHomeBoy.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "LHB" src = "LemonHomeBoy.png" onclick = "playLHB()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Liquid_Wolf.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "PhantomOrgan.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -80,6 +80,7 @@
 		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
 		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
 		<audio id = "audioLSI" src = "Happy_Fathers_Day_LSI.m4a"></audio>
+		<audio id = "audioLHB" src = "Happy_Fathers_Day_LHB.ogg"></audio>
 		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
@@ -139,6 +140,10 @@
 	}
 	function playLSI(){
 		var audio = document.getElementById("audioLSI");
+		audio.play();
+	}
+	function playLHB(){
+		var audio = document.getElementById("audioLHB");
 		audio.play();
 	}
 	function playLGE(){
