@@ -38,7 +38,33 @@
 	img {
 		position: absolute;
 	}
-	#Bran, #Chiben, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Skoen, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
+	.tooltiptext {
+		width: 200px;
+		height: 50px;
+		background-color: #555;
+		color: #fff;
+		text-align: center;
+		padding: 5px 0;
+		border-radius: 6px;
+		position: absolute;
+		z-index: 1;
+		margin-left: -30px;
+		margin-top: -80px;
+		font-size: 20px;
+	}
+	.tooltiptext::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #555 transparent transparent transparent;
+	}
+	#Bran, #Chiben, #Delta, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Skoen, #Canuck {border: 2px solid #5050D0;
+		border-radius: 20px;
+	}
 </style>
 
 <!-- Waiting on Bats, Kota, Delta (text), Indras, Scott, Sketchy -->
@@ -53,7 +79,8 @@
 		<img id = "Chiben" src = "Chiben.png" onclick = "playChiben()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Dakota.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "Delta Brony.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Delta" src = "Delta Brony.png" onmouseover = "deltaOver()" onmouseout = "deltaOff()">
+		<span id = "Deltatooltip" class = "tooltiptext">Happy Father's Day!</span>
 		<img id = "Ein" src = "Ein.png" onclick = "playEin()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Els" src = "Els.png" onclick = "playEls()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Ever.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -126,6 +153,18 @@
 	function playChiben(){
 		var audio = document.getElementById("audioChiben");
 		audio.play();
+	}
+	function deltaOver(){
+		document.title = "(paused) It's Father's Day, Nightfawn!";
+		deltapic = document.getElementById("Delta");
+		deltatt = document.getElementById("Deltatooltip");
+		deltatt.style.left = deltapic.style.left;
+		deltatt.style.top = deltapic.style.top;
+		// deltatt.visibility = visible;
+	}
+	function deltaOff(){
+		document.title = "It's Father's Day, Nightfawn!"
+		deltatt.style.top = '-200%';
 	}
 	function playEin(){
 		var audio = document.getElementById("audioEin");
