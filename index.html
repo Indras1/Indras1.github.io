@@ -15,6 +15,14 @@
 		overflow: hidden;
 		background: #202225;
 	}
+	body h1 {
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+		font-size: 64px;
+		color: #CDA7FF;
+		font-weight: 700;
+		text-decoration: none solid rgb(68, 68, 68);
+		font-variant: small-caps;
+	}
 	#mainContainer {
 		width: 90%;
 		height: 90%;
@@ -30,13 +38,13 @@
 	img {
 		position: absolute;
 	}
-	#Chiben, #Ein, #Fred, #Joe, #Jojo, #Ken, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
+	#Chiben, #Ein, #Fred, #Joe, #Jojo, #Ken, #LSI, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
 </style>
 
 <body data-rsssl=1 onload="movingPictures()">
 	<div id = "centerText">
 		<h1>Happy Father's Day</h1><p>
-		<h1>to our server daddy!</h1>
+		<h1>To Our Server Daddy!</h1>
 	</div>
 	<div id = "mainContainer">
 		<img id = "Bats" src = "Bats.png">
@@ -54,7 +62,7 @@
 		<img id = "Jojo" src = "Jojo.png" onclick = "playJojo()">
 		<img src = "Kane.png">
 		<img id = "Ken" src = "Ken.png" onclick = "playKen()">
-		<img src = "LateStageInfernalism.png">
+		<img id = "LSI" src = "LateStageInfernalism.png" onclick = "playLSI()">
 		<img src = "LemonHomeBoy.png">
 		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()">
 		<img src = "Liquid_Wolf.png">
@@ -71,6 +79,7 @@
 		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
 		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
 		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
+		<audio id = "audioLSI" src = "Happy_Fathers_Day_LSI.m4a"></audio>
 		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
@@ -118,6 +127,10 @@
 	}
 	function playKen(){
 		var audio = document.getElementById("audioKen");
+		audio.play();
+	}
+	function playLSI(){
+		var audio = document.getElementById("audioLSI");
 		audio.play();
 	}
 	function playLGE(){
