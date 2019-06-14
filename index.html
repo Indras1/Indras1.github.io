@@ -30,7 +30,7 @@
 	img {
 		position: absolute;
 	}
-	#Ein, #Fred, #Joe, #Jojo, #Ken, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
+	#Chiben, #Ein, #Fred, #Joe, #Jojo, #Ken, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
 </style>
 
 <body data-rsssl=1 onload="movingPictures()">
@@ -41,7 +41,7 @@
 	<div id = "mainContainer">
 		<img id = "Bats" src = "Bats.png">
 		<img src = "Bran.png">
-		<img src = "Chiben.png">
+		<img id = "Chiben" src = "Chiben.png" onclick = "playChiben()">
 		<img src = "Cointreauversial.png">
 		<img src = "Dakota.png">
 		<img src = "Delta Brony.png">
@@ -56,7 +56,7 @@
 		<img id = "Ken" src = "Ken.png" onclick = "playKen()">
 		<img src = "LateStageInfernalism.png">
 		<img src = "LemonHomeBoy.png">
-		<img src = "LetsGoExploring.png">
+		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()">
 		<img src = "Liquid_Wolf.png">
 		<img src = "PhantomOrgan.png">
 		<img src = "Scott.png">
@@ -65,11 +65,13 @@
 		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()">
 		<img src = "That1platypus.png">
 		<img src = "The Pugilist.png">
+		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
 		<audio id = "audioFred" src = "Happy_Fathers_Day_FredR.mp3"></audio>
 		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
 		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
 		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
+		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
 
@@ -94,6 +96,10 @@
 			}
 		}
 	}
+	function playChiben(){
+		var audio = document.getElementById("audioChiben");
+		audio.play();
+	}
 	function playEin(){
 		var audio = document.getElementById("audioEin");
 		audio.play();
@@ -112,6 +118,10 @@
 	}
 	function playKen(){
 		var audio = document.getElementById("audioKen");
+		audio.play();
+	}
+	function playLGE(){
+		var audio = document.getElementById("audioLGE");
 		audio.play();
 	}
 	function playCanuck(){
