@@ -38,9 +38,10 @@
 	img {
 		position: absolute;
 	}
-	#Chiben, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
+	#Bran, #Chiben, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Skoen, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
 </style>
 
+<!-- Waiting on Bats, Kota, Delta (text), Indras, Scott, Sketchy -->
 <body data-rsssl=1 onload="movingPictures()">
 	<div id = "centerText">
 		<h1>Happy Father's Day</h1><p>
@@ -48,7 +49,7 @@
 	</div>
 	<div id = "mainContainer">
 		<img id = "Bats" src = "Bats.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "Bran.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Bran" src = "Bran.png" onclick = "playBran()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Chiben" src = "Chiben.png" onclick = "playChiben()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Dakota.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -69,10 +70,11 @@
 		<img src = "PhantomOrgan.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Scott.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "SketchyByNature.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "Skoen.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Skoen" src = "Skoen.png" onclick = "playSkoen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "That1platypus.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<audio id = "audioBran" src = "Happy_Fathers_Day_Bran.mp3"></audio>
 		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
 		<audio id = "audioEls" src = "Happy_Fathers_Day_Els.ogg"></audio>
@@ -83,6 +85,7 @@
 		<audio id = "audioLSI" src = "Happy_Fathers_Day_LSI.m4a"></audio>
 		<audio id = "audioLHB" src = "Happy_Fathers_Day_LHB.ogg"></audio>
 		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
+		<audio id = "audioSkoen" src = "Happy_Fathers_Day_Skoen.mp3"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
 
@@ -114,6 +117,11 @@
 	}
 	function unpauseSpin(){
 		document.title = "It's Father's Day, Nightfawn!"
+	}
+	
+	function playBran(){
+		var audio = document.getElementById("audioBran");
+		audio.play();
 	}
 	function playChiben(){
 		var audio = document.getElementById("audioChiben");
@@ -153,6 +161,10 @@
 	}
 	function playLGE(){
 		var audio = document.getElementById("audioLGE");
+		audio.play();
+	}
+	function playSkoen(){
+		var audio = document.getElementById("audioSkoen");
 		audio.play();
 	}
 	function playCanuck(){
