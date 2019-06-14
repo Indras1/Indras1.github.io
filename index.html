@@ -40,7 +40,7 @@
 	}
 	.tooltiptext {
 		width: 200px;
-		height: 50px;
+		height: 100px;
 		background-color: #555;
 		color: #fff;
 		text-align: center;
@@ -49,7 +49,7 @@
 		position: absolute;
 		z-index: 1;
 		margin-left: -30px;
-		margin-top: -80px;
+		margin-top: -130px;
 		font-size: 20px;
 	}
 	.tooltiptext::after {
@@ -61,6 +61,11 @@
 		border-width: 5px;
 		border-style: solid;
 		border-color: #555 transparent transparent transparent;
+	}
+	#Heart {
+		margin-top: -80px;
+		margin-left: 40px;
+		z-index: 1;
 	}
 	#Bran, #Chiben, #Delta, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Skoen, #Canuck {border: 2px solid #5050D0;
 		border-radius: 20px;
@@ -80,7 +85,7 @@
 		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Dakota.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Delta" src = "Delta Brony.png" onmouseover = "deltaOver()" onmouseout = "deltaOff()">
-		<span id = "Deltatooltip" class = "tooltiptext">Happy Father's Day!</span>
+		<span id = "Deltatooltip" class = "tooltiptext">Happy Father's Day Daddy</span>
 		<img id = "Ein" src = "Ein.png" onclick = "playEin()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Els" src = "Els.png" onclick = "playEls()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Ever.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -101,6 +106,7 @@
 		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "That1platypus.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Heart" src = "Heart.png">
 		<audio id = "audioBran" src = "Happy_Fathers_Day_Bran.mp3"></audio>
 		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
@@ -118,11 +124,14 @@
 
 	<script>
 	function movingPictures() {
-		var numpics = document.images.length;
+		var numpics = document.images.length - 1;
 		var pics = document.getElementsByTagName('img');
 		var pos = 0;
 		var posinterval = 0;
 		var id = setInterval(frame, 5);
+		var heartimg = document.getElementById("Heart");
+
+		heartimg.style.top = '-200%';
 
 		function frame() {
 			if (pos >= 2 * Math.PI) {
@@ -158,13 +167,16 @@
 		document.title = "(paused) It's Father's Day, Nightfawn!";
 		deltapic = document.getElementById("Delta");
 		deltatt = document.getElementById("Deltatooltip");
+		heart = document.getElementById("Heart");
 		deltatt.style.left = deltapic.style.left;
 		deltatt.style.top = deltapic.style.top;
-		// deltatt.visibility = visible;
+		heart.style.top = deltatt.style.top;
+		heart.style.left = deltatt.style.left;
 	}
 	function deltaOff(){
 		document.title = "It's Father's Day, Nightfawn!"
 		deltatt.style.top = '-200%';
+		heart.style.top = deltatt.style.top;
 	}
 	function playEin(){
 		var audio = document.getElementById("audioEin");
