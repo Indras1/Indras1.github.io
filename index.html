@@ -38,7 +38,7 @@
 	img {
 		position: absolute;
 	}
-	#Chiben, #Ein, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
+	#Chiben, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Canuck {border: 2px solid #5050D0; border-radius: 20px;}
 </style>
 
 <body data-rsssl=1 onload="movingPictures()">
@@ -54,7 +54,7 @@
 		<img src = "Dakota.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Delta Brony.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Ein" src = "Ein.png" onclick = "playEin()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "Els.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Els" src = "Els.png" onclick = "playEls()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Ever.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Fred" src = "FredR.png" onclick = "playFred()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Indras.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -75,6 +75,7 @@
 		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
+		<audio id = "audioEls" src = "Happy_Fathers_Day_Els.ogg"></audio>
 		<audio id = "audioFred" src = "Happy_Fathers_Day_FredR.mp3"></audio>
 		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
 		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
@@ -120,6 +121,10 @@
 	}
 	function playEin(){
 		var audio = document.getElementById("audioEin");
+		audio.play();
+	}
+	function playEls(){
+		var audio = document.getElementById("audioEls");
 		audio.play();
 	}
 	function playFred(){
