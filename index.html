@@ -47,32 +47,32 @@
 		<h1>To Our Server Daddy!</h1>
 	</div>
 	<div id = "mainContainer">
-		<img id = "Bats" src = "Bats.png">
-		<img src = "Bran.png">
-		<img id = "Chiben" src = "Chiben.png" onclick = "playChiben()">
-		<img src = "Cointreauversial.png">
-		<img src = "Dakota.png">
-		<img src = "Delta Brony.png">
-		<img id = "Ein" src = "Ein.png" onclick = "playEin()">
-		<img src = "Els.png">
-		<img src = "Ever.png">
-		<img id = "Fred" src = "FredR.png" onclick = "playFred()">
-		<img src = "Indras.png">
-		<img id = "Joe" src = "Joe.png" onclick = "playJoe()">
-		<img id = "Jojo" src = "Jojo.png" onclick = "playJojo()">
-		<img src = "Kane.png">
-		<img id = "Ken" src = "Ken.png" onclick = "playKen()">
-		<img id = "LSI" src = "LateStageInfernalism.png" onclick = "playLSI()">
-		<img src = "LemonHomeBoy.png">
-		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()">
-		<img src = "Liquid_Wolf.png">
-		<img src = "PhantomOrgan.png">
-		<img src = "Scott.png">
-		<img src = "SketchyByNature.png">
-		<img src = "Skoen.png">
-		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()">
-		<img src = "That1platypus.png">
-		<img src = "The Pugilist.png">
+		<img id = "Bats" src = "Bats.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Bran.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Chiben" src = "Chiben.png" onclick = "playChiben()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Dakota.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Delta Brony.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Ein" src = "Ein.png" onclick = "playEin()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Els.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Ever.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Fred" src = "FredR.png" onclick = "playFred()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Indras.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Joe" src = "Joe.png" onclick = "playJoe()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Jojo" src = "Jojo.png" onclick = "playJojo()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Kane.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Ken" src = "Ken.png" onclick = "playKen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "LSI" src = "LateStageInfernalism.png" onclick = "playLSI()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "LemonHomeBoy.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Liquid_Wolf.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "PhantomOrgan.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Scott.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "SketchyByNature.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Skoen.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "That1platypus.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
 		<audio id = "audioFred" src = "Happy_Fathers_Day_FredR.mp3"></audio>
@@ -96,14 +96,22 @@
 			if (pos >= 2 * Math.PI) {
 				pos = 0;
 			} else {
-				pos+=(Math.PI / 2000);
-				posinterval = (2 * Math.PI) / numpics
-				for(i=0; i < numpics; i++){
-					pics[i].style.top = ((Math.sin(pos + (posinterval * i)) * 0.9 + 0.9) * 50) + '%';
-					pics[i].style.left = ((Math.cos(pos + (posinterval * i)) + 1) * 50) + '%';
+				if (document.title == "It's Father's Day, Nightfawn!") {
+					pos+=(Math.PI / 2000);
+					posinterval = (2 * Math.PI) / numpics
+					for(i=0; i < numpics; i++){
+						pics[i].style.top = ((Math.sin(pos + (posinterval * i)) * 0.9 + 0.9) * 50) + '%';
+						pics[i].style.left = ((Math.cos(pos + (posinterval * i)) + 1) * 50) + '%';
+					}
 				}
 			}
 		}
+	}
+	function pauseSpin(){
+		document.title = "(paused) It's Father's Day, Nightfawn!"
+	}
+	function unpauseSpin(){
+		document.title = "It's Father's Day, Nightfawn!"
 	}
 	function playChiben(){
 		var audio = document.getElementById("audioChiben");
