@@ -67,12 +67,12 @@
 		margin-left: 40px;
 		z-index: 1;
 	}
-	#Bran, #Chiben, #Delta, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Skoen, #Canuck {border: 2px solid #5050D0;
+	#Bran, #Chiben, #Delta, #Ein, #Els, #Fred, #Joe, #Jojo, #Ken, #LSI, #LHB, #LGE, #Scott, #Skoen, #Canuck {border: 2px solid #5050D0;
 		border-radius: 20px;
 	}
 </style>
 
-<!-- Waiting on Bats, Kota, Delta (text), Indras, Scott, Sketchy -->
+<!-- Waiting on Bats, Kota, Indras, Scott, Sketchy -->
 <body data-rsssl=1 onload="movingPictures()">
 	<div id = "centerText">
 		<h1>Happy Father's Day</h1><p>
@@ -100,7 +100,7 @@
 		<img id = "LGE" src = "LetsGoExploring.png" onclick = "playLGE()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Liquid_Wolf.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "PhantomOrgan.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
-		<img src = "Scott.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Scott" src = "Scott.png" onclick = "playScott()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "SketchyByNature.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Skoen" src = "Skoen.png" onclick = "playSkoen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Canuck" src = "Soviet Canuck.png" onclick = "playCanuck()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -118,6 +118,7 @@
 		<audio id = "audioLSI" src = "Happy_Fathers_Day_LSI.m4a"></audio>
 		<audio id = "audioLHB" src = "Happy_Fathers_Day_LHB.ogg"></audio>
 		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
+		<audio id = "audioScott" src = "Happy_Fathers_Day_Scott.m4a"></audio>
 		<audio id = "audioSkoen" src = "Happy_Fathers_Day_Skoen.mp3"></audio>
 		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
 	</div>
@@ -128,17 +129,14 @@
 		var pics = document.getElementsByTagName('img');
 		var pos = 0;
 		var posinterval = 0;
-		var id = setInterval(frame, 5);
-		var heartimg = document.getElementById("Heart");
-
-		heartimg.style.top = '-200%';
+		var id = setInterval(frame, 10);
 
 		function frame() {
 			if (pos >= 2 * Math.PI) {
 				pos = 0;
 			} else {
 				if (document.title == "It's Father's Day, Nightfawn!") {
-					pos+=(Math.PI / 2000);
+					pos+=(Math.PI / 1000);
 					posinterval = (2 * Math.PI) / numpics
 					for(i=0; i < numpics; i++){
 						pics[i].style.top = ((Math.sin(pos + (posinterval * i)) * 0.9 + 0.9) * 50) + '%';
@@ -212,6 +210,10 @@
 	}
 	function playLGE(){
 		var audio = document.getElementById("audioLGE");
+		audio.play();
+	}
+	function playScott(){
+		var audio = document.getElementById("audioScott");
 		audio.play();
 	}
 	function playSkoen(){
