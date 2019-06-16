@@ -76,14 +76,14 @@
 	}
 </style>
 
-<!-- Waiting on Bats, Kota -->
+<!-- Waiting on Kota -->
 <body data-rsssl=1 onload="movingPictures()">
 	<div id = "centerText">
 		<h1>Happy Father's Day</h1><p>
 		<h1>To Our Server Daddy!</h1>
 	</div>
 	<div id = "mainContainer">
-		<img src = "Bats.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Bats.png" onclick = "playBats()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img class = "Bordered" src = "Bran.png" onclick = "playBran()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img class = "Bordered" src = "Chiben.png" onclick = "playChiben()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
@@ -111,6 +111,7 @@
 		<img src = "That1platypus.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
 		<img id = "Heart" src = "Heart.png">
+		<audio id = "audioBats" src = "Happy_Fathers_Day_Bats.wav"></audio>
 		<audio id = "audioBran" src = "Happy_Fathers_Day_Bran.mp3"></audio>
 		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
 		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
@@ -159,6 +160,10 @@
 		document.title = "It's Father's Day, Nightfawn!"
 	}
 	
+	function playBats(){
+		var audio = document.getElementById("audioBats");
+		audio.play();
+	}
 	function playBran(){
 		var audio = document.getElementById("audioBran");
 		audio.play();
