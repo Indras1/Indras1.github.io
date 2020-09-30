@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>We Love You, Sofy!</title>
+</head>
+
+<style type="text/css">
+	html,body {
+		width: 100%;
+		height: 100%;
+		padding: 0px;
+		overflow: hidden;
+		background: #44318D;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	div {
+		position: relative;
+	}
+	img {
+		display: none;
+		position: absolute;
+		width: 2px;
+		height: 2px;
+	}
+	ul {
+		font-size: 2em;
+		color: #A4B3B6;
+		line-height: 1.5;
+		list-style-type: none;
+		padding: 0;
+	}
+	li:hover {
+		text-shadow: 3px 2px 3px #2A1B3D;
+	}
+	#imgSofy {
+		display: block;
+	}
+	#nameList {
+		position: fixed;
+		width: 250px;
+		top: 0px;
+		right: 0px;
+		padding: 5px;
+	}
+
+</style>
+
+<body data-rsssl=1>
+	<img id = "imgSofy" src = "Avatar_Clean.png" alt = "Sofy" style="top:25%;left:5%;height:370px;width:340px;">
+	<img id = "imgIndras" src = "Indras.png">
+	<img id = "imgMango" src = "Mango.gif">
+	<img id = "imgVPraetor" src = "VPraetor.png">
+	<audio id = "audioIndras" src = "Indras.ogg" type = "audio/ogg"></audio>
+	<audio id = "audioMango" src = "Mango.ogg" type = "audio/ogg"></audio>
+	<audio id = "audioVPraetor" src = "VPraetor.ogg" type = "audio/ogg"></audio>
+
+	<div id = "nameList">
+		<ul>
+			<li id = "linkArn">Arn♡</li>
+			<li id = "linkEKong1">EKong1</li>
+			<li id = "linkIndras" onclick = "playAudio('Indras')">Indras1</li>
+			<li id = "linkMango" onclick = "playAudio('Mango')">Mango</li>
+			<li id = "linkviktorrevolusao">viktorrevolusao</li>
+			<li id = "linkVPraetor" onclick = "playAudio('VPraetor')">VPraetor</li>
+		</ul>
+	</div>
+
+	<script>
+	
+	function playAudio(clickedName) {
+		showAvatar(clickedName);
+		var audio = document.getElementById("audio" + clickedName);
+		audio.play();
+		audio.onended = function() {
+			hideAvatar(clickedName);
+		};
+	}
+	function showAvatar(target) {
+		var imgTarget = document.getElementById('img' + target);
+		var linkTarget = document.getElementById('link' + target);
+		var posCounter = 0;
+		var startLeft = linkTarget.getBoundingClientRect().left - 5
+		var startTop = linkTarget.getBoundingClientRect().top + 20
+		var endLeft = window.innerWidth / 2 - 64
+		var endTop = window.innerHeight / 2 - 64
+		imgTarget.style.display = "block";
+		var idTimer = setInterval(expand, 4);
+		function expand() {
+			if (posCounter == 250) {
+				clearInterval(idTimer);
+			} else {
+				posCounter++;
+				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft
+				curTop = ((endTop - startTop) / 250) * posCounter + startTop
+				curWidth = (126 / 250) * posCounter + 2
+				imgTarget.style.height = curWidth + "px";
+				imgTarget.style.width = curWidth + "px";
+				imgTarget.style.top = curTop + "px";
+				imgTarget.style.left = curLeft + "px";
+			}
+		}
+	}
+	function hideAvatar(target) {
+		var imgTarget = document.getElementById('img' + target);
+		var linkTarget = document.getElementById('link' + target);
+		var posCounter = 0;
+		var startLeft = window.innerWidth / 2 - 64
+		var startTop = window.innerHeight / 2 - 64
+		var endLeft = linkTarget.getBoundingClientRect().left - 5
+		var endTop = linkTarget.getBoundingClientRect().top + 20
+		var idTimer = setInterval(contract, 4);
+		function contract() {
+			if (posCounter == 250) {
+				imgTarget.style.display = "none";
+				clearInterval(idTimer);
+			} else {
+				posCounter++;
+				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft
+				curTop = ((endTop - startTop) / 250) * posCounter + startTop
+				curWidth = 128 - (126 / 250) * posCounter
+				imgTarget.style.height = curWidth + "px";
+				imgTarget.style.width = curWidth + "px";
+				imgTarget.style.top = curTop + "px";
+				imgTarget.style.left = curLeft + "px";
+			}
+		}
+	}
+	</script>
+
+</body>
+</html>
