@@ -5,7 +5,7 @@ html,body {
 	overflow: hidden;
 	background: #44318D;
 	background-image: linear-gradient(to top left, #2A1B3D, #44318D);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 div {
 	position: relative;
@@ -24,20 +24,18 @@ ul {
 	padding: 0;
 }
 li:hover {
-	text-shadow: 3px 2px 3px #2A1B3D;
-	border: 1px solid #A4B3B6;
-	border-radius: 4px;
+	text-shadow: 4px 4px 6px #2A1B3D;
 }
 #imgSofy {
 	display: block;
 }
 #nameList {
 	position: fixed;
-	width: 250px;
+	width: 33%;
 	top: 0px;
 	right: 0px;
-	padding: 5px;
-	background-color: #2A1B3DBF;
+	padding-left: 25px;
+	background-color: #8265A7BF;
 	border: 4px solid #D83F87;
 	border-style: outset;
 	border-radius: 15px;
