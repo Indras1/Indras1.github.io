@@ -6,6 +6,7 @@ html,body {
 	background: #44318D;
 	background-image: linear-gradient(to top left, #2A1B3D, #44318D);
 	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
 }
 div {
 	position: relative;
@@ -29,8 +30,8 @@ li:hover {
 #imgSofy {
 	bottom: 0px;
 	left: 10px;
-	height: 370px;
-	width: 340px;
+	height: 290px;
+	width: 500px;
 	display: block;
 }
 #nameList {
