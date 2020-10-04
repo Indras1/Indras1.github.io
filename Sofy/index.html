@@ -46,11 +46,19 @@ Color scheme:
 	
 	function playAudio(clickedName) {
 		showAvatar(clickedName);
+		
+		/* Stop all audio files */
+		var audiolist = document.getElementsByTagName("audio");
+		var i;
+		for (i = 0; i < audiolist.length; i++) {
+			audiolist[i].pause();
+			audiolist[i].currentTime = 0;
+		}
+		
 		var audio = document.getElementById("audio" + clickedName);
 		audio.play();
-		audio.onended = function() {
-			hideAvatar(clickedName);
-		};
+		audio.onpause = function(){hideAvatar(clickedName)};
+		audio.onended = function(){hideAvatar(clickedName)};
 	}
 	function showAvatar(target) {
 		var imgTarget = document.getElementById('img' + target);
