@@ -33,6 +33,7 @@ Color scheme:
 	<img id = "imgSquish" src = "Squish.gif">
 	<img id = "imgViking" src = "Viking.webp">
 	<img id = "imgVPraetor" src = "VPraetor.png">
+
 	<!--- Blank audio tag:
 	<audio id = "audio" src = ".mp3" type = "audio/mpeg"></audio>
 	--->
@@ -64,6 +65,11 @@ Color scheme:
 		</ul>
 	</div>
 
+	<label class = "containerSwitch">
+		<input type = "checkbox" id = "toggleAutoplay" onclick = "toggleCheck()">
+		<span class = "slider"></span>
+	</label>
+
 	<script>
 	
 	function playAudio(clickedName) {
@@ -82,14 +88,15 @@ Color scheme:
 		audio.onpause = function(){hideAvatar(clickedName)};
 		audio.onended = function(){hideAvatar(clickedName)};
 	}
+
 	function showAvatar(target) {
 		var imgTarget = document.getElementById('img' + target);
 		var linkTarget = document.getElementById('link' + target);
 		var posCounter = 0;
-		var startLeft = linkTarget.getBoundingClientRect().left - 5
-		var startTop = linkTarget.getBoundingClientRect().top + 20
-		var endLeft = window.innerWidth / 2 - 64
-		var endTop = window.innerHeight / 2 - 64
+		var startLeft = linkTarget.getBoundingClientRect().left - 5;
+		var startTop = linkTarget.getBoundingClientRect().top + 20;
+		var endLeft = window.innerWidth / 2 - 64;
+		var endTop = window.innerHeight / 2 - 64;
 		imgTarget.style.display = "block";
 		var idTimer = setInterval(expand, 4);
 		function expand() {
@@ -97,9 +104,9 @@ Color scheme:
 				clearInterval(idTimer);
 			} else {
 				posCounter++;
-				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft
-				curTop = ((endTop - startTop) / 250) * posCounter + startTop
-				curWidth = (254 / 250) * posCounter + 2
+				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft;
+				curTop = ((endTop - startTop) / 250) * posCounter + startTop;
+				curWidth = (254 / 250) * posCounter + 2;
 				imgTarget.style.height = curWidth + "px";
 				imgTarget.style.width = curWidth + "px";
 				imgTarget.style.top = curTop + "px";
@@ -107,14 +114,15 @@ Color scheme:
 			}
 		}
 	}
+
 	function hideAvatar(target) {
 		var imgTarget = document.getElementById('img' + target);
 		var linkTarget = document.getElementById('link' + target);
 		var posCounter = 0;
-		var startLeft = window.innerWidth / 2 - 64
+		var startLeft = window.innerWidth / 2 - 64;
 		var startTop = window.innerHeight / 2 - 64
-		var endLeft = linkTarget.getBoundingClientRect().left - 5
-		var endTop = linkTarget.getBoundingClientRect().top + 20
+		var endLeft = linkTarget.getBoundingClientRect().left - 5;
+		var endTop = linkTarget.getBoundingClientRect().top + 20;
 		var idTimer = setInterval(contract, 4);
 		function contract() {
 			if (posCounter == 250) {
@@ -122,9 +130,9 @@ Color scheme:
 				clearInterval(idTimer);
 			} else {
 				posCounter++;
-				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft
-				curTop = ((endTop - startTop) / 250) * posCounter + startTop
-				curWidth = 256 - (254 / 250) * posCounter
+				curLeft = ((endLeft - startLeft) / 250) * posCounter + startLeft;
+				curTop = ((endTop - startTop) / 250) * posCounter + startTop;
+				curWidth = 256 - (254 / 250) * posCounter;
 				imgTarget.style.height = curWidth + "px";
 				imgTarget.style.width = curWidth + "px";
 				imgTarget.style.top = curTop + "px";
@@ -132,6 +140,16 @@ Color scheme:
 			}
 		}
 	}
+	
+	function toggleCheck() {
+		var toggle = document.getElementById('toggleAutoplay');
+		if (toggle.checked == true) {
+			window.alert('Sorry, autoplay isn\'t implemented yet!');
+		} else {
+			
+		}
+	}
+
 	</script>
 
 </body>
