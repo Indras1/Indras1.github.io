@@ -20,6 +20,7 @@ Color scheme:
 
 <body data-rsssl = 1 onload = "loadPage()">
 	<img id = "imgSofy" src = "Sofy_Tail.gif">
+	<img id = "imgSofyOld" src = "Old_Avatar.png">
 
 	<!---  Blank image tag:
 	<img id = "img" src = "">
@@ -42,7 +43,7 @@ Color scheme:
 	<audio id = "audioEKong1" src = "EKong1.mp3" type = "audio/mpeg"></audio>
 	<audio id = "audioIndras" src = "Indras.ogg" type = "audio/ogg"></audio>
 	<audio id = "audioMango" src = "Mango.ogg" type = "audio/ogg"></audio>
-	<audio id = "audioMheohkco" src = "Mheohkco2.mp3" type = "audio/mpeg"></audio>
+	<audio id = "audioMheohkco" src = "Mheohkco.mp3" type = "audio/mpeg"></audio>
 	<audio id = "audioSquish" src = "Squish.mp3" type = "audio/mpeg"></audio>
 	<audio id = "audioViking" src = "Viking.mp3" type = "audio/mpeg"></audio>
 	<audio id = "audioVPraetor" src = "VPraetor.mp3" type = "audio/ogg"></audio>
@@ -78,6 +79,20 @@ Color scheme:
 		for (i = 0; i < l; i++) {
 			listItems[i].classList.add('unplayed');
 		}
+
+		var timerNostalgia = setTimeout(function() { showOld(); }, 5000);
+	}
+
+	function showOld() {
+		document.getElementById("imgSofyOld").style.opacity = 100;
+		document.getElementById("imgSofy").style.opacity = 0;
+		var timerNostalgia = setTimeout(function() { hideOld(); }, 200);
+	}
+	
+	function hideOld() {
+		document.getElementById("imgSofyOld").style.opacity = 0;
+		document.getElementById("imgSofy").style.opacity = 100;
+		var timerNostalgia = setTimeout(function() { showOld(); }, 15000);
 	}
 
 	function playAudio(clickedName) {
