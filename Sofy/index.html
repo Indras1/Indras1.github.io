@@ -18,7 +18,7 @@ Color scheme:
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body data-rsssl=1>
+<body data-rsssl = 1 onload = "loadPage()">
 	<img id = "imgSofy" src = "Sofy_Tail.gif">
 
 	<!---  Blank image tag:
@@ -72,9 +72,30 @@ Color scheme:
 
 	<script>
 	
+	function loadPage() {
+		var listItems = document.getElementsByTagName("li");
+		var l = listItems.length;
+		for (i = 0; i < l; i++) {
+			listItems[i].classList.add('unplayed');
+		}
+	}
+
 	function playAudio(clickedName) {
+		stopAllAudio();
 		showAvatar(clickedName);
-		
+		var audio = document.getElementById("audio" + clickedName);
+		audio.play();
+		audio.onpause = function() {hideAvatar(clickedName)};
+		audio.onended = function() {
+			setPlayed(clickedName);
+			hideAvatar(clickedName);
+			if (document.getElementById("toggleAutoplay").checked = true) {
+				toggleCheck();
+			}
+		}
+	}
+
+	function stopAllAudio() {
 		/* Stop all audio files */
 		var audiolist = document.getElementsByTagName("audio");
 		var i;
@@ -82,11 +103,6 @@ Color scheme:
 			audiolist[i].pause();
 			audiolist[i].currentTime = 0;
 		}
-		
-		var audio = document.getElementById("audio" + clickedName);
-		audio.play();
-		audio.onpause = function(){hideAvatar(clickedName)};
-		audio.onended = function(){hideAvatar(clickedName)};
 	}
 
 	function showAvatar(target) {
@@ -143,13 +159,18 @@ Color scheme:
 	
 	function toggleCheck() {
 		var toggle = document.getElementById('toggleAutoplay');
+		var unplayedAudios = document.getElementsByClassName('unplayed');
 		if (toggle.checked == true) {
-			window.alert('Sorry, autoplay isn\'t implemented yet!');
+			stopAllAudio();
+			playAudio(unplayedAudios[0].id.slice(4));
 		} else {
-			
+			stopAllAudio();
 		}
 	}
 
+	function setPlayed(target) {
+		document.getElementById("link" + target).classList.remove('unplayed');
+	}
 	</script>
 
 </body>

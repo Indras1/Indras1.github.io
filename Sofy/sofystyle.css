@@ -19,7 +19,6 @@ img {
 }
 ul {
 	font-size: 2em;
-	color: #A4B3B6;
 	line-height: 1.5;
 	list-style-type: none;
 	padding: 0;
@@ -85,6 +84,9 @@ input:checked + .slider:before {
 input:checked + .slider:after {
 	content:'Autoplay On';
 }
+.unplayed {
+	color: #A4B3B6;
+}
 #imgSofy {
 	bottom: 0px;
 	left: 10px;
@@ -93,6 +95,7 @@ input:checked + .slider:after {
 	display: block;
 }
 #nameList {
+	color: #2A1B3D;
 	position: fixed;
 	width: 33%;
 	top: 20px;
