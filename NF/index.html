@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>It's Father's Day, Nightfawn!</title>
+</head>
+
+<style type="text/css">
+	html,body {
+		width: 100%;
+		height: 100%;
+		padding: 0px;
+		overflow: hidden;
+		background: #202225;
+		background-image: url('NF Eye.png');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+	}
+	body h1 {
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+		font-size: 64px;
+		color: #CDA7FF;
+		font-weight: 700;
+		text-decoration: none solid rgb(68, 68, 68);
+		font-variant: small-caps;
+		text-shadow: 5px 3px 10px black;
+	}
+	#mainContainer {
+		width: 90%;
+		height: 90%;
+		position: relative;
+	}
+	#centerText {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+	img {
+		position: absolute;
+	}
+	.tooltiptext {
+		width: 200px;
+		height: 100px;
+		background-color: #555;
+		color: #fff;
+		text-align: center;
+		padding: 5px 0;
+		border-radius: 6px;
+		position: absolute;
+		z-index: 1;
+		margin-left: -30px;
+		margin-top: -130px;
+		font-size: 20px;
+	}
+	.tooltiptext::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #555 transparent transparent transparent;
+	}
+	#Heart {
+		margin-top: -80px;
+		margin-left: 40px;
+		z-index: 1;
+	}
+	.Bordered {border: 2px solid #5050D0;
+		border-radius: 20px;
+	}
+</style>
+
+<body data-rsssl=1 onload="movingPictures()">
+	<div id = "centerText">
+		<h1>Happy Father's Day</h1><p>
+		<h1>To Our Server Daddy!</h1>
+	</div>
+	<div id = "mainContainer">
+		<img class = "Bordered" src = "Bats.png" onclick = "playBats()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Bran.png" onclick = "playBran()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Chiben.png" onclick = "playChiben()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Cointreauversial.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Dakota.png" onclick = "playDakota()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Delta Brony.png" onmouseover = "deltaOver()" onmouseout = "deltaOff()">
+		<span id = "Deltatooltip" class = "tooltiptext">Happy Father's Day Daddy</span>
+		<img class = "Bordered" src = "Ein.png" onclick = "playEin()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Els.png" onclick = "playEls()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Ever.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "FredR.png" onclick = "playFred()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Indras.png" onclick = "playIndras()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Joe.png" onclick = "playJoe()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Jojo.png" onclick = "playJojo()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Kane.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Ken.png" onclick = "playKen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "LateStageInfernalism.png" onclick = "playLSI()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "LemonHomeBoy.png" onclick = "playLHB()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "LetsGoExploring.png" onclick = "playLGE()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "Liquid_Wolf.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "PhantomOrgan.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Scott.png" onclick = "playScott()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "SketchyByNature.png" onclick = "playSketchy()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Skoen.png" onclick = "playSkoen()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img class = "Bordered" src = "Soviet Canuck.png" onclick = "playCanuck()" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "That1platypus.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img src = "The Pugilist.png" onmouseover = "pauseSpin()" onmouseout = "unpauseSpin()">
+		<img id = "Heart" src = "Heart.png">
+		<audio id = "audioBats" src = "Happy_Fathers_Day_Bats.wav"></audio>
+		<audio id = "audioBran" src = "Happy_Fathers_Day_Bran.mp3"></audio>
+		<audio id = "audioChiben" src = "Happy_Fathers_Day_Chiben.mp3"></audio>
+		<audio id = "audioDakota" src = "Happy_Fathers_Day_Dakota.mp3"></audio>
+		<audio id = "audioEin" src = "Happy_Fathers_Day_Ein.ogg"></audio>
+		<audio id = "audioEls" src = "Happy_Fathers_Day_Els.ogg"></audio>
+		<audio id = "audioFred" src = "Happy_Fathers_Day_FredR.mp3"></audio>
+		<audio id = "audioIndras" src = "Happy_Fathers_Day_Indras.ogg"></audio>
+		<audio id = "audioJoe" src = "Happy_Fathers_Day_Joe_Giberrish.webm"></audio>
+		<audio id = "audioJojo" src = "Happy_Fathers_Day_Jojo.m4a"></audio>
+		<audio id = "audioKen" src = "Happy_Fathers_Day_Ken.m4a"></audio>
+		<audio id = "audioLSI" src = "Happy_Fathers_Day_LSI.m4a"></audio>
+		<audio id = "audioLHB" src = "Happy_Fathers_Day_LHB.ogg"></audio>
+		<audio id = "audioLGE" src = "Happy_Fathers_Day_LGE.ogg"></audio>
+		<audio id = "audioSketchy" src = "Happy_Fathers_Day_Sketchy.mp3"></audio>
+		<audio id = "audioScott" src = "Happy_Fathers_Day_Scott.m4a"></audio>
+		<audio id = "audioSkoen" src = "Happy_Fathers_Day_Skoen.mp3"></audio>
+		<audio id = "audioCanuck" src = "Happy_Fathers_Day_Canuck.ogg"></audio>
+	</div>
+
+	<script>
+	function movingPictures() {
+		var numpics = document.images.length - 1;
+		var pics = document.getElementsByTagName('img');
+		var pos = 0;
+		var posinterval = 0;
+		var id = setInterval(frame, 10);
+
+		function frame() {
+			if (pos >= 2 * Math.PI) {
+				pos = 0;
+			} else {
+				if (document.title == "It's Father's Day, Nightfawn!") {
+					pos+=(Math.PI / 1000);
+					posinterval = (2 * Math.PI) / numpics
+					for(i=0; i < numpics; i++){
+						pics[i].style.top = ((Math.sin(pos + (posinterval * i)) * 0.9 + 0.9) * 50) + '%';
+						pics[i].style.left = ((Math.cos(pos + (posinterval * i)) + 1) * 50) + '%';
+					}
+				}
+			}
+		}
+	}
+	function pauseSpin(){
+		document.title = "(paused) It's Father's Day, Nightfawn!"
+	}
+	function unpauseSpin(){
+		document.title = "It's Father's Day, Nightfawn!"
+	}
+	
+	function playBats(){
+		var audio = document.getElementById("audioBats");
+		audio.play();
+	}
+	function playBran(){
+		var audio = document.getElementById("audioBran");
+		audio.play();
+	}
+	function playChiben(){
+		var audio = document.getElementById("audioChiben");
+		audio.play();
+	}
+	function playDakota(){
+		var audio = document.getElementById("audioDakota");
+		audio.play();
+	}
+	function deltaOver(){
+		document.title = "(paused) It's Father's Day, Nightfawn!";
+		deltapic = document.getElementById("Delta");
+		deltatt = document.getElementById("Deltatooltip");
+		heart = document.getElementById("Heart");
+		deltatt.style.left = deltapic.style.left;
+		deltatt.style.top = deltapic.style.top;
+		heart.style.top = deltatt.style.top;
+		heart.style.left = deltatt.style.left;
+	}
+	function deltaOff(){
+		document.title = "It's Father's Day, Nightfawn!"
+		deltatt.style.top = '-200%';
+		heart.style.top = deltatt.style.top;
+	}
+	function playEin(){
+		var audio = document.getElementById("audioEin");
+		audio.play();
+	}
+	function playEls(){
+		var audio = document.getElementById("audioEls");
+		audio.play();
+	}
+	function playFred(){
+		var audio = document.getElementById("audioFred");
+		audio.play();
+	}
+	function playIndras(){
+		var audio = document.getElementById("audioIndras");
+		audio.play();
+	}
+	function playJoe(){
+		var audio = document.getElementById("audioJoe");
+		audio.play();
+	}
+	function playJojo(){
+		var audio = document.getElementById("audioJojo");
+		audio.play();
+	}
+	function playKen(){
+		var audio = document.getElementById("audioKen");
+		audio.play();
+	}
+	function playLSI(){
+		var audio = document.getElementById("audioLSI");
+		audio.play();
+	}
+	function playLHB(){
+		var audio = document.getElementById("audioLHB");
+		audio.play();
+	}
+	function playLGE(){
+		var audio = document.getElementById("audioLGE");
+		audio.play();
+	}
+	function playScott(){
+		var audio = document.getElementById("audioScott");
+		audio.play();
+	}
+	function playSketchy(){
+		var audio = document.getElementById("audioSketchy");
+		audio.play();
+	}
+	function playSkoen(){
+		var audio = document.getElementById("audioSkoen");
+		audio.play();
+	}
+	function playCanuck(){
+		var audio = document.getElementById("audioCanuck");
+		audio.play();
+	}
+
+	</script>
+
+</body>
+</html>
