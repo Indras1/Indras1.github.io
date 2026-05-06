@@ -5,6 +5,8 @@ const gameState = {
     hasFoundClay: false
 };
 
+let walking = false;
+
 function updateUI() {
     // Update numbers
     document.getElementById('stat-steps').innerText = gameState.steps;
@@ -29,6 +31,31 @@ function logMessage(text) {
 }
 
 function handleWalk() {
+    if (walking) return;
+    walking = true;
+
+    const button = document.getElementById('walk-btn');
+    const walkText = document.getElementById('walk-text');
+    const walkProgress = document.getElementById('walk-progress');
+
+    button.disabled = true;
+    walkText.style.display = 'none';
+    walkProgress.style.display = 'block';
+    walkProgress.value = 0;
+
+    let count = 0;
+    const interval = setInterval(() => {
+        count++;
+        walkProgress.value = count / 100;
+        if (count >= 500) {
+            clearInterval(interval);
+            walking = false;
+            button.disabled = false;
+            walkText.style.display = 'block';
+            walkProgress.style.display = 'none';
+        }
+    }, 10);
+
     gameState.steps++;
     
     if (gameState.steps === 1) {
