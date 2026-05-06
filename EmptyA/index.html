@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Afterlife</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game-container">
+        <section id="log-column">
+            <div id="message-log">
+                <p>I sat up abruptly, confused by the empty sky...</p>
+            </div>
+        </section>
+
+        <section id="action-column">
+            <div id="buttons">
+                <button id="walk-btn" onclick="handleWalk()">Walk</button>
+
+                <button id="search-btn" class="hidden" onclick="handleSearch()">Search Sand</button>
+            </div>
+        </section>
+
+        <section id="stats-column">
+            <h2>Discovery</h2>
+            <ul>
+                <li>Steps Taken: <span id="stat-steps">0</span></li>
+                <li id="stat-clay-row" class="hidden">Clay: <span id="stat-clay">0</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
