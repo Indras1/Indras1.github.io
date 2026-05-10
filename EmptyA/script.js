@@ -59,9 +59,13 @@ function handleWalk() {
     gameState.steps++;
     
     if (gameState.steps === 1) {
+        logMessage("I should be recovering from anesthesia on a hospital bed.")
+    } else if (gameState.steps === 2) {
         logMessage("Picking a direction, I started walking.");
-    } else if (gameState.steps === 5) {
+    } else if (gameState.steps === 3) {
         logMessage("The horizon is too flat. Eerily uniform.");
+    } else if (gameState.steps === 4) {
+        logMessage('"Hello!" I yelled, then listened.  Why am I in a desert?');
     }
     
     updateUI();
