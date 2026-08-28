@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Script Archive</title>
+    <!-- Classless CSS: Instant modern styling without writing CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Script Archive</h1>
+            <p>A directory of audio scripts and written works.</p>
+            <input type="search" id="search" placeholder="Search by title, tag, or trope...">
+        </header>
+
+        <div id="script-list"></div>
+    </main>
+
+    <script>
+        fetch('scripts.json')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('script-list');
+                const searchInput = document.getElementById('search');
+
+                function render(items) {
+                    container.innerHTML = items.map(s => `
+            <article>
+              <header>
+                <strong>${s.title}</strong> — <small>${s.format || ''}</small>
+              </header>
+              <p>${s.summary}</p>
+              <footer>
+                <small>Tags: ${s.tags.join(', ')} | Words: ${s.wordCount}</small><br>
+                <a href="${s.url}" target="_blank" rel="noopener">Read Script &rarr;</a>
+              </footer>
+            </article>
+          `).join('');
+                }
+
+                render(data);
+
+                searchInput.addEventListener('input', e => {
+                    const q = e.target.value.toLowerCase();
+                    const filtered = data.filter(s =>
+                        s.title.toLowerCase().includes(q) ||
+                        s.summary.toLowerCase().includes(q) ||
+                        s.tags.some(t => t.toLowerCase().includes(q))
+                    );
+                    render(filtered);
+                });
+            });
+    </script>
+</body>
+
+</html>
